@@ -4,12 +4,10 @@ import { Button, Input, Image } from 'react-native-elements';
 import { StatusBar } from 'expo-status-bar';
 import { KeyboardAvoidingView } from 'react-native';
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassowrd] = useState('');
 	const signIn = () => {};
-
-	const register = () => {};
 	return (
 		<KeyboardAvoidingView behavior='padding' style={styles.container}>
 			<StatusBar style='light' />
@@ -41,12 +39,12 @@ const LoginScreen = () => {
 			</View>
 			<Button containerStyle={styles.button} title='Login' onPress={signIn} />
 			<Button
+				onPress={() => navigation.navigate('Register')}
 				containerStyle={styles.button}
 				type='outline'
 				title='Register'
-				onPress={register}
-            />
-            <View style={{height:100}} />
+			/>
+			<View style={{ height: 100 }} />
 		</KeyboardAvoidingView>
 	);
 };
@@ -61,11 +59,11 @@ const styles = StyleSheet.create({
 		padding: 10,
 		backgroundColor: 'white',
 	},
-    inputContainer: {
-        width:'100%'
-    },
-    button: {
-        width: 200,
-        marginTop:10,
-    }
+	inputContainer: {
+		width: '100%',
+	},
+	button: {
+		width: 200,
+		marginTop: 10,
+	},
 });
