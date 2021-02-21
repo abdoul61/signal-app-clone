@@ -46,7 +46,7 @@ export default AddchatScreen;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        backgroundColor: 'whitesmoke',
         padding: 30,
         height:'100%'
     },
